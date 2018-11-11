@@ -93,7 +93,7 @@ uiModules.get('app/dashboard', ['kibana/courier','ngRoute']).run(function ($root
                 
                 doNotSendRouteChangeNotificationToParent = true; // we do not want to send to our parent of the change (as he was the one who iniated this...)
                 
-                $location.url(finalUri);
+                $location.url(finalUri).replace(); // replace makes sure no history is added to the browser so we can use the back button - and it won't affect the kibana iframe                
                 // go and get the data with the new filters:           
                 //localAppState.save();
                 courier.fetch();
