@@ -15,15 +15,15 @@ cd $KIBANA_HOME # go to your kibana home directory
 ``` bash
 kibanaVersion=5.2.3  && \
 curdir=$(pwd) && \
-wget https://github.com/bondib/kibana-iframe-communicator-plugin/releases/download/v5.x/kibana-iframe-communicator-plugin-1.0.1.zip && \
-unzip "kibana-iframe-communicator-plugin-1.0.1.zip" "kibana/kibana-iframe-communicator-plugin/package.json" -d /tmp && \
+wget https://github.com/bondib/kibana-iframe-communicator-plugin/releases/download/v5.x/kibana-iframe-communicator-plugin-1.0.2.zip && \
+unzip "kibana-iframe-communicator-plugin-1.0.2.zip" "kibana/kibana-iframe-communicator-plugin/package.json" -d /tmp && \
 cd /tmp && \
 line='s/KIBANA-VERSION/'$kibanaVersion'/' && \
 sed -i -e $line kibana/kibana-iframe-communicator-plugin/package.json && \
-zip --update "$curdir/kibana-iframe-communicator-plugin-1.0.1.zip" "kibana/kibana-iframe-communicator-plugin/package.json" && \
+zip --update "$curdir/kibana-iframe-communicator-plugin-1.0.2.zip" "kibana/kibana-iframe-communicator-plugin/package.json" && \
 cd "$curdir" && \
-./bin/kibana-plugin install file://$curdir/kibana-iframe-communicator-plugin-1.0.1.zip && \
-rm -r kibana-iframe-communicator-plugin-1.0.1.zip
+./bin/kibana-plugin install file://$curdir/kibana-iframe-communicator-plugin-1.0.2.zip && \
+rm -r kibana-iframe-communicator-plugin-1.0.2.zip
 ```
 
 
